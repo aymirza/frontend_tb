@@ -13,24 +13,7 @@ function CreateStudent() {
     const fortmatResponse = (res) => {
         return JSON.stringify(res, null, 2);
     }
-    const [select,setseelcted] = useState('');
-    const [optionList,setOptionList] = useState([]);
-    const fetchData = (value) => {
-        axios
-            .get('http://localhost:4040/api/empl/uchastka')
-            .then((response) => {
-                const {data} = response;
-                if (response.status === 200) {
-                    setOptionList(data)
-                } else {
 
-                }
-            })
-            .catch((error) => console.log(error));
-    };
-    useEffect(()=>{
-        fetchData();
-    }, [])
     async function postData() {
         const postData = {
             name: postname.current.value,
@@ -72,6 +55,26 @@ function CreateStudent() {
     }
 
 
+    const [select, setseelcted] = useState('');
+    const [optionList, setOptionList] = useState([]);
+    const fetchData = (value) => {
+        axios
+            .get('http://localhost:4040/api/empl/uchastka')
+            .then((response) => {
+                const {data} = response;
+                if (response.status === 200) {
+                    setOptionList(data)
+                } else {
+
+                }
+            })
+            .catch((error) => console.log(error));
+    };
+    useEffect(() => {
+        fetchData();
+    }, [])
+
+
     return (
         <div className="card">
             <div className="card-header">
@@ -92,10 +95,10 @@ function CreateStudent() {
                             disabled={false}
                             value={select}
                             onChange={(e) => setseelcted(e.currentTarget.value)}>
-                            {optionList.map((item)=>(
+                            {optionList.map((item) => (
                                 <option key={item.id} value={item.name}>
-                                {item.name}
-                            </option>
+                                    {item.name}
+                                </option>
                             ))}
                         </select>
 

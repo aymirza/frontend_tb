@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import StudentList from "./components/student-list";
 import CreateStudent from "./components/create-student";
 import CreateNarushenie from "./components/exmployee/create-narushenie";
+import CreateEmployee from "./components/exmployee/create-employee";
 
 const App = () => {
     return (
@@ -39,6 +40,12 @@ const App = () => {
                                         StudentList
                                     </Link>
                                 </Nav>
+                                 <Nav>
+                                    <Link to={"/create-employee"}
+                                          className="nav-link">
+                                        Employee
+                                    </Link>
+                                </Nav>
 
                             </Nav>
                         </Container>
@@ -52,6 +59,7 @@ const App = () => {
                                     <Route element={<CreateStudent/>} path="/create-student" component={CreateStudent}/>
                                     <Route element={<StudentList/>} path="/student-list" component={StudentList}/>
                                     <Route element={<CreateNarushenie/>} path="/create-narushenie" component={CreateNarushenie}/>
+                                    <Route element={<CreateEmployee/>} path="/create-employee" component={CreateNarushenie}/>
                                 </Routes>
                             </div>
                         </Col>

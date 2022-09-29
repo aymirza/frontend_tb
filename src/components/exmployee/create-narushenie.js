@@ -9,7 +9,7 @@ function CreateNarushenie() {
     const posttsex_uchastka = useRef(null);
     const postpravila = useRef(null);
     const postnarushenie = useRef(null);
-    const postimage = useRef(null);
+    const postimage_id = useRef(null);
 
     const [postResult, setPostResult] = useState(null);
 
@@ -20,15 +20,13 @@ function CreateNarushenie() {
 
     async function postData() {
         const postData = {
-
-            firstname: postfirstname.current.value,
-            image: postimage.current.value,
             lastname: postlastname.current.value,
+            firstname: postfirstname.current.value,
             uchastka: postuchastka.current.value,
             tsex_uchastka: posttsex_uchastka.current.value,
             pravila: postpravila.current.value,
             narushenie: postnarushenie.current.value,
-
+            image_id: postimage_id.current.value,
         };
         try {
             const res = await fetch(`${baseURL}/create-empl-naruhsenie`, {
@@ -141,29 +139,22 @@ function CreateNarushenie() {
 
     const [imageSelect, setImageSelected] = useState('');
     const [imageOptionList, setImageOptionList] = useState([]);
-    const saveFile = (e) => {
-        setImageSelected(e.target.files[0]);
-        setImageOptionList(e.target.files[0].name);
-    };
+    const fetchDataImage = (value5) => {
+        axios
+            .get('http://localhost:4040/api/image')
+            .then((response) => {
+                const {data} = response;
+                if (response.status === 200) {
+                    setImageOptionList(data)
+                } else {
 
-    // const [imageSelect, setImageSelected] = useState('');
-    // const [imageOptionList, setImageOptionList] = useState([]);
-    // const fetchDataImage = (value5) => {
-    //     axios
-    //         .get('http://localhost:4040/api/image')
-    //         .then((response) => {
-    //             const {data} = response;
-    //             if (response.status === 200) {
-    //                 setImageOptionList(data)
-    //             } else {
-    //
-    //             }
-    //         })
-    //         .catch((error) => console.log(error));
-    // };
-    // useEffect(() => {
-    //     fetchDataImage();
-    // }, [])
+                }
+            })
+            .catch((error) => console.log(error));
+    };
+    useEffect(() => {
+        fetchDataImage();
+    }, [])
 
     return (
         <div className="card">
@@ -232,24 +223,18 @@ function CreateNarushenie() {
                         </select>
                     </div>
                     <div className="form-group">
-                        <input
-                            type="file"
-                            ref={postimage}
-                            onChange={saveFile}
-
-                        />
-                        {/*<select*/}
-                        {/*    className="form-control"*/}
-                        {/*    ref={postimage_id}*/}
-                        {/*    disabled={false}*/}
-                        {/*    value={imageSelect}*/}
-                        {/*    onChange={(d) => setImageSelected(d.currentTarget.value)}>*/}
-                        {/*    {imageOptionList.map((item5) => (*/}
-                        {/*        <option key={item5.id} value={item5.image}>*/}
-                        {/*            {item5.image}*/}
-                        {/*        </option>*/}
-                        {/*    ))}*/}
-                        {/*</select>*/}
+                        <select
+                            className="form-control"
+                            ref={postimage_id}
+                            disabled={false}
+                            value={imageSelect}
+                            onChange={(d) => setImageSelected(d.currentTarget.value)}>
+                            {imageOptionList.map((item5) => (
+                                <option key={item5.id} value={item5.image}>
+                                    {item5.image}
+                                </option>
+                            ))}
+                        </select>
                     </div>
 
 
