@@ -7,6 +7,9 @@ import StudentList from "./components/student-list";
 import CreateStudent from "./components/create-student";
 import CreateNarushenie from "./components/exmployee/create-narushenie";
 import CreateEmployee from "./components/exmployee/create-employee";
+import ListEmployees from "./components/exmployee/list-employees";
+import Images from "./components/exmployee/images";
+import EmplNarushenie from "./components/exmployee/empl-narushenie";
 
 const App = () => {
     return (
@@ -46,6 +49,24 @@ const App = () => {
                                         Employee
                                     </Link>
                                 </Nav>
+                                 <Nav>
+                                    <Link to={"/list-employees"}
+                                          className="nav-link">
+                                        ListEmployee
+                                    </Link>
+                                </Nav>
+                                 <Nav>
+                                    <Link to={"/images"}
+                                          className="nav-link">
+                                        Images
+                                    </Link>
+                                </Nav>
+                                  <Nav>
+                                    <Link to={"/empl-narushenie"}
+                                          className="nav-link">
+                                        EmplNarushenie
+                                    </Link>
+                                </Nav>
 
                             </Nav>
                         </Container>
@@ -60,6 +81,9 @@ const App = () => {
                                     <Route element={<StudentList/>} path="/student-list" component={StudentList}/>
                                     <Route element={<CreateNarushenie/>} path="/create-narushenie" component={CreateNarushenie}/>
                                     <Route element={<CreateEmployee/>} path="/create-employee" component={CreateNarushenie}/>
+                                    <Route element={<ListEmployees/>} path="/list-employees" component={CreateNarushenie}/>
+                                    <Route element={<Images/>} path="/images" component={Images}/>
+                                    <Route element={<EmplNarushenie/>} path="/empl-narushenie" component={EmplNarushenie}/>
                                 </Routes>
                             </div>
                         </Col>
