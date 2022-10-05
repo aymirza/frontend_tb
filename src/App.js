@@ -10,6 +10,8 @@ import CreateEmployee from "./components/exmployee/create-employee";
 import ListEmployees from "./components/exmployee/list-employees";
 import Images from "./components/exmployee/images";
 import EmplNarushenie from "./components/exmployee/empl-narushenie";
+import ListEmplNarushenie from "./components/exmployee/list-empl-narushenie";
+import CreateEmplNarushenie from "./components/exmployee/create-empl-narushenie";
 
 const App = () => {
     return (
@@ -21,7 +23,7 @@ const App = () => {
                             <Navbar.Brand>
                                 <Link to={"/student-list"}
                                       className="nav-link">
-                                    React Mern Stack App
+                                    Texnika havfsizligi
                                 </Link>
                             </Navbar.Brand>
                             <Nav className="justify-content-end">
@@ -38,9 +40,9 @@ const App = () => {
                                     </Link>
                                 </Nav>
                                 <Nav>
-                                    <Link to={"/create-narushenie"}
+                                    <Link to={"/create-empl-narushenie"}
                                           className="nav-link">
-                                        StudentList
+                                        CreateEmplNarushenie
                                     </Link>
                                 </Nav>
                                  <Nav>
@@ -49,22 +51,28 @@ const App = () => {
                                         Employee
                                     </Link>
                                 </Nav>
+                                {/* <Nav>*/}
+                                {/*    <Link to={"/list-employees"}*/}
+                                {/*          className="nav-link">*/}
+                                {/*        ListEmployee*/}
+                                {/*    </Link>*/}
+                                {/*</Nav>*/}
+                                {/* <Nav>*/}
+                                {/*    <Link to={"/images"}*/}
+                                {/*          className="nav-link">*/}
+                                {/*        Images*/}
+                                {/*    </Link>*/}
+                                {/*</Nav>*/}
+                                {/*  <Nav>*/}
+                                {/*    <Link to={"/empl-narushenie"}*/}
+                                {/*          className="nav-link">*/}
+                                {/*        EmplNarushenie*/}
+                                {/*    </Link>*/}
+                                {/*</Nav>*/}
                                  <Nav>
-                                    <Link to={"/list-employees"}
+                                    <Link to={"/list-empl-narushenie"}
                                           className="nav-link">
-                                        ListEmployee
-                                    </Link>
-                                </Nav>
-                                 <Nav>
-                                    <Link to={"/images"}
-                                          className="nav-link">
-                                        Images
-                                    </Link>
-                                </Nav>
-                                  <Nav>
-                                    <Link to={"/empl-narushenie"}
-                                          className="nav-link">
-                                        EmplNarushenie
+                                        ListEmplNarushenie
                                     </Link>
                                 </Nav>
 
@@ -80,10 +88,11 @@ const App = () => {
                                     <Route element={<CreateStudent/>} path="/create-student" component={CreateStudent}/>
                                     <Route element={<StudentList/>} path="/student-list" component={StudentList}/>
                                     <Route element={<CreateNarushenie/>} path="/create-narushenie" component={CreateNarushenie}/>
-                                    <Route element={<CreateEmployee/>} path="/create-employee" component={CreateNarushenie}/>
-                                    <Route element={<ListEmployees/>} path="/list-employees" component={CreateNarushenie}/>
-                                    <Route element={<Images/>} path="/images" component={Images}/>
-                                    <Route element={<EmplNarushenie/>} path="/empl-narushenie" component={EmplNarushenie}/>
+                                    <Route element={<CreateEmplNarushenie/>} path="/create-empl-narushenie" component={CreateEmplNarushenie}/>
+                                    {/*<Route element={<ListEmployees/>} path="/list-employees" component={CreateNarushenie}/>*/}
+                                    {/*<Route element={<Images/>} path="/images" component={Images}/>*/}
+                                    {/*<Route element={<EmplNarushenie/>} path="/empl-narushenie" component={EmplNarushenie}/>*/}
+                                    <Route element={<ListEmplNarushenie/>} path="/list-empl-narushenie" component={ListEmplNarushenie}/>
                                 </Routes>
                             </div>
                         </Col>
