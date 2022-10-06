@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import axios from "axios";
 
 const TableEmplNarushenie = (props) => {
-    const {id, lastname, firstname, uchastka,tsex_uchastka,pravila,narushenie,img_url,img_fullname,img_type} = props.obj;
+    const {id, lastname, firstname, uchastka,tsex_uchastka,pravila,narushenie,imgurl,imgfullname,imgtype} = props.obj;
     // const deleteStudent = () => {
     //     axios
     //         .delete("http://localhost:4040/api/students/delete-student/" + id)
@@ -24,17 +24,17 @@ const TableEmplNarushenie = (props) => {
             <td> {tsex_uchastka}</td>
             <td> {pravila}</td>
             <td> {narushenie}</td>
-            <td> <a href={img_url}>{img_url}</a></td>
-            <td> {img_fullname}</td>
-            <td> {img_type}</td>
-            <td>
-                {/*<Link className={"edit-link"}*/}
-                {/*          to={"/editStudent/" + id}>Edit</Link>*/}
-                {/*    <Button onClick={deleteStudent}*/}
-                {/*            size={"sm"} variant={"danger"}>*/}
-                {/*        Delete*/}
-                {/*    </Button>*/}
-            </td>
+            <td> <a href={imgurl}>{imgurl}</a></td>
+            {/*<td> {imgfullname}</td>*/}
+            {/*<td> {imgtype}</td>*/}
+            {/*<td>*/}
+            {/*    /!*<Link className={"edit-link"}*!/*/}
+            {/*    /!*          to={"/editStudent/" + id}>Edit</Link>*!/*/}
+            {/*    /!*    <Button onClick={deleteStudent}*!/*/}
+            {/*    /!*            size={"sm"} variant={"danger"}>*!/*/}
+            {/*    /!*        Delete*!/*/}
+            {/*    /!*    </Button>*!/*/}
+            {/*</td>*/}
 
         </tr>
     );

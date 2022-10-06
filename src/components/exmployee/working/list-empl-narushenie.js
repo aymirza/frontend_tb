@@ -8,7 +8,7 @@ const ListEmplNarushenie = () => {
     const [student, setStudents] = useState([]);
     useEffect(() => {
         axios
-            .get("http://10.45.180.94:4041/api/")
+            .get("http://localhost:4041/api")
             .then(({data}) => {
                 setStudents(data);
             })
@@ -26,15 +26,15 @@ const ListEmplNarushenie = () => {
             <Table striped bordered hover>
                 <thead>
                 <tr>
-                    <th>lastname</th>
-                    <th>firstname</th>
-                    <th>uchastka</th>
-                    <th>tsex_uchastka</th>
-                    <th>pravila</th>
-                    <th>narushenie</th>
-                    <th>img_url</th>
-                    <th>img_fullname</th>
-                    <th>img_type</th>
+                    <th>Фамилия</th>
+                    <th>Имя</th>
+                    <th>Участка</th>
+                    <th>Цех нарушение</th>
+                    <th>Правила</th>
+                    <th>Нарушения</th>
+                    <th>Фото</th>
+                    {/*<th>imgfullname</th>*/}
+                    {/*<th>imgtype</th>*/}
 
                 </tr>
                 </thead>

@@ -6,12 +6,10 @@ import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import StudentList from "./components/student-list";
 import CreateStudent from "./components/create-student";
 import CreateNarushenie from "./components/exmployee/create-narushenie";
-import CreateEmployee from "./components/exmployee/create-employee";
-import ListEmployees from "./components/exmployee/list-employees";
-import Images from "./components/exmployee/images";
-import EmplNarushenie from "./components/exmployee/empl-narushenie";
-import ListEmplNarushenie from "./components/exmployee/list-empl-narushenie";
-import CreateEmplNarushenie from "./components/exmployee/create-empl-narushenie";
+
+import ListEmplNarushenie from "./components/exmployee/working/list-empl-narushenie";
+import CreateEmplNarushenie from "./components/exmployee/working/create-empl-narushenie";
+import EmplNarushenieSearch from "./components/exmployee/empl-nar-search";
 
 const App = () => {
     return (
@@ -21,36 +19,31 @@ const App = () => {
                     <Navbar bg="dark" variant="dark">
                         <Container>
                             <Navbar.Brand>
-                                <Link to={"/student-list"}
+                                <Link to={"/list-empl-narushenie"}
                                       className="nav-link">
                                     Texnika havfsizligi
                                 </Link>
                             </Navbar.Brand>
                             <Nav className="justify-content-end">
-                                <Nav>
-                                    <Link to={"/create-student"}
-                                          className="nav-link">
-                                        CreateStudent
-                                    </Link>
-                                </Nav>
-                                <Nav>
-                                    <Link to={"/student-list"}
-                                          className="nav-link">
-                                        StudentList
-                                    </Link>
-                                </Nav>
-                                <Nav>
-                                    <Link to={"/create-empl-narushenie"}
-                                          className="nav-link">
-                                        CreateEmplNarushenie
-                                    </Link>
-                                </Nav>
-                                 <Nav>
-                                    <Link to={"/create-employee"}
-                                          className="nav-link">
-                                        Employee
-                                    </Link>
-                                </Nav>
+                                {/*<Nav>*/}
+                                {/*    <Link to={"/create-student"}*/}
+                                {/*          className="nav-link">*/}
+                                {/*        CreateStudent*/}
+                                {/*    </Link>*/}
+                                {/*</Nav>*/}
+                                {/*<Nav>*/}
+                                {/*    <Link to={"/student-list"}*/}
+                                {/*          className="nav-link">*/}
+                                {/*        StudentList*/}
+                                {/*    </Link>*/}
+                                {/*</Nav>*/}
+
+                                {/* <Nav>*/}
+                                {/*    <Link to={"/create-employee"}*/}
+                                {/*          className="nav-link">*/}
+                                {/*        Employee*/}
+                                {/*    </Link>*/}
+                                {/*</Nav>*/}
                                 {/* <Nav>*/}
                                 {/*    <Link to={"/list-employees"}*/}
                                 {/*          className="nav-link">*/}
@@ -63,16 +56,22 @@ const App = () => {
                                 {/*        Images*/}
                                 {/*    </Link>*/}
                                 {/*</Nav>*/}
-                                {/*  <Nav>*/}
-                                {/*    <Link to={"/empl-narushenie"}*/}
-                                {/*          className="nav-link">*/}
-                                {/*        EmplNarushenie*/}
-                                {/*    </Link>*/}
-                                {/*</Nav>*/}
+                                  <Nav>
+                                    <Link to={"/empl-nar-search"}
+                                          className="nav-link">
+                                        Фильтр
+                                    </Link>
+                                </Nav>
+                                 <Nav>
+                                    <Link to={"/create-empl-narushenie"}
+                                          className="nav-link">
+                                        Narushenia qo'shish
+                                    </Link>
+                                </Nav>
                                  <Nav>
                                     <Link to={"/list-empl-narushenie"}
                                           className="nav-link">
-                                        ListEmplNarushenie
+                                        Narushenialar
                                     </Link>
                                 </Nav>
 
@@ -91,7 +90,7 @@ const App = () => {
                                     <Route element={<CreateEmplNarushenie/>} path="/create-empl-narushenie" component={CreateEmplNarushenie}/>
                                     {/*<Route element={<ListEmployees/>} path="/list-employees" component={CreateNarushenie}/>*/}
                                     {/*<Route element={<Images/>} path="/images" component={Images}/>*/}
-                                    {/*<Route element={<EmplNarushenie/>} path="/empl-narushenie" component={EmplNarushenie}/>*/}
+                                    <Route element={<EmplNarushenieSearch/>} path="/empl-nar-search" component={EmplNarushenieSearch}/>
                                     <Route element={<ListEmplNarushenie/>} path="/list-empl-narushenie" component={ListEmplNarushenie}/>
                                 </Routes>
                             </div>
