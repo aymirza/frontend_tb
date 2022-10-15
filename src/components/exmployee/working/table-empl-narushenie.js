@@ -3,13 +3,13 @@ import React from "react";
 
 const TableEmplNarushenie = (props) => {
 
-    const {id, lastname, firstname, uchastka, tsex_uchastka, pravila, narushenie, imgurl, predlojenie} = props.obj;
+    const {  lastname, firstname, uchastka, tsex_uchastka, pravila, narushenie, imgurl, predlojenie} = props.obj;
 
     return (
             <tr>
 
                 <td> {lastname}</td>
-                <td> {firstname}</td>
+                <td > {firstname}</td>
                 <td > {uchastka} </td>
                 <td> {tsex_uchastka}</td>
                 <td> {pravila}</td>

@@ -8,7 +8,7 @@ const ListEmplNarushenie = () => {
     const [student, setStudents] = useState([]);
     useEffect(() => {
         axios
-            .get("http://localhost:4041/api")
+            .get("http://10.45.180.16:4041/api")
             .then(({data}) => {
                 setStudents(data);
             })
@@ -24,7 +24,7 @@ const ListEmplNarushenie = () => {
     return (
 
         <div className="card">
-            <Table    responsive >
+            <Table    responsive style={{wordBreak: 'break-all'}} >
                 <thead  >
 
                 <tr>

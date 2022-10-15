@@ -24,13 +24,13 @@ function EmplNarFilter() {
     }
 
     const columns = [
-        {dataField: 'lastname', sort: true, filter: textFilter(), text: 'lastname',  align: 'center', headerAlign: 'center',headerStyle: { width: '120px'  }},
-        {dataField: 'firstname', sort: true, filter: textFilter(), text: 'firstname',  align: 'center', headerAlign: 'center',headerStyle: { width: '120px'  }},
-        {dataField: 'uchastka', sort: true, filter: textFilter(), text: 'uchastka',  align: 'center', headerAlign: 'center',headerStyle: { width: '120px'  }},
-        {dataField: 'pravila', sort: true, filter: textFilter(), text: 'pravila',  align: 'center', headerAlign: 'center',headerStyle: { width: '120px'  }},
-        {dataField: 'narushenie', sort: true, filter: textFilter(), text: 'narushenie',  align: 'center', headerAlign: 'center',headerStyle: { width: '120px'  }},
-        {dataField: 'predlojenie', sort: true, filter: textFilter(), text: 'predlojenie',  align: 'center', headerAlign: 'center',headerStyle: { width: '120px'  }},
-        {dataField: 'imgurl', sort: true, filter: textFilter(), text: 'imgurl',  align: 'center', headerAlign: 'center',headerStyle: { width: '120px'  }},
+        {dataField: 'lastname', sort: true, filter: textFilter(), text: 'lastname',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px'},style:{wordBreak: 'break-all'} },
+        {dataField: 'firstname', sort: true, filter: textFilter(), text: 'firstname',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px'},style:{wordBreak: 'break-all'} },
+        {dataField: 'uchastka', sort: true, filter: textFilter(), text: 'uchastka',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px'},style:{wordBreak: 'break-all'} },
+        {dataField: 'pravila', sort: true, filter: textFilter(), text: 'pravila',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px'},style:{wordBreak: 'break-all'} },
+        {dataField: 'narushenie', sort: true, filter: textFilter(), text: 'narushenie',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px'},style:{wordBreak: 'break-all'} },
+        {dataField: 'predlojenie', sort: true, filter: textFilter(), text: 'predlojenie',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px' },style:{wordBreak: 'break-all'} },
+        {dataField: 'imgurl', sort: true, filter: textFilter(), text: 'imgurl',  align: 'center', headerAlign: 'center',headerStyle: { width: '150px'},style:{wordBreak: 'break-all'} },
     ]
 
     const pagination = paginationFactory({
@@ -53,7 +53,7 @@ function EmplNarFilter() {
     });
 
     useEffect(() => {
-        fetch(('http://localhost:4041/api'))
+        fetch(('http://10.45.180.16:4041/api'))
             .then(response => response.json())
             .then(result => setUserList(result))
             .catch(error => console.log(error));
@@ -69,6 +69,7 @@ function EmplNarFilter() {
                         data={userList}
                         columns={columns}
                         exportCSV
+
                     >
                         {
                             props => (
@@ -82,7 +83,11 @@ function EmplNarFilter() {
                                         pagination={pagination}
                                         filter={filterFactory()}
                                         {...props.baseProps}
+
+
                                     />
+
+
                                 </React.Fragment>
 
                             )
