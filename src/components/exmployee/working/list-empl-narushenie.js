@@ -22,16 +22,19 @@ const ListEmplNarushenie = () => {
         });
     };
     return (
-        <div  >
-            <Table striped bordered hover>
-                <thead>
+
+        <div className="card">
+            <Table    responsive >
+                <thead  >
+
                 <tr>
                     <th>Фамилия</th>
                     <th>Имя</th>
-                    <th>Участка</th>
+                    <th >Участка</th>
                     <th>Цех нарушение</th>
                     <th>Правила</th>
                     <th>Нарушения</th>
+                    <th>Предложение</th>
                     <th>Фото</th>
                     {/*<th>imgfullname</th>*/}
                     {/*<th>imgtype</th>*/}
@@ -39,7 +42,7 @@ const ListEmplNarushenie = () => {
                 </tr>
                 </thead>
                 <tbody>{DataTable()}</tbody>
-            </Table>
+            </Table >
         </div>
     );
 };

@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
+
+
 const CreateEmplNarushenie = () => {
     const [result, setResult] = useState("");
 
@@ -14,6 +16,7 @@ const CreateEmplNarushenie = () => {
         const tsex_uchastka = event.target["tsex_uchastka"].value;
         const pravila = event.target["pravila"].value;
         const narushenie = event.target["narushenie"].value;
+        const predlojenie = event.target["predlojenie"].value;
 
         const formData = new FormData();
         formData.append("lastname", lastname);
@@ -22,6 +25,7 @@ const CreateEmplNarushenie = () => {
         formData.append("tsex_uchastka", tsex_uchastka);
         formData.append("pravila", pravila);
         formData.append("narushenie", narushenie);
+        formData.append("predlojenie", predlojenie);
         formData.append("file", file);
 
         fetch("http://localhost:4041/api/upload", {
@@ -62,7 +66,7 @@ const CreateEmplNarushenie = () => {
     const [tsexOptionList, setTsexOptionList] = useState([]);
     const fetchDataTsexUchastka = (value2) => {
         axios
-            .get('http://localhost:4041/api/uchastka')
+            .get('http://localhost:4041/api/tsex')
             .then((response) => {
                 const {data} = response;
                 if (response.status === 200) {
@@ -81,7 +85,7 @@ const CreateEmplNarushenie = () => {
     const [pravilaOptionList, setPravilaOptionList] = useState([]);
     const fetchDataPravila = (value3) => {
         axios
-            .get('http://localhost:4041/api/uchastka')
+            .get('http://localhost:4041/api/pravila')
             .then((response) => {
                 const {data} = response;
                 if (response.status === 200) {
@@ -100,7 +104,7 @@ const CreateEmplNarushenie = () => {
     const [narushenieOptionList, setNarushenieOptionList] = useState([]);
     const fetchDataNarushenie = (value4) => {
         axios
-            .get('http://localhost:4041/api/uchastka')
+            .get('http://localhost:4041/api/narushenie')
             .then((response) => {
                 const {data} = response;
                 if (response.status === 200) {
@@ -118,6 +122,7 @@ const CreateEmplNarushenie = () => {
     return (
         <div className="card">
             <div className="card-header">
+                <h1>Create Empl Narushenie</h1>
                 <div className="card-body">
                     <form onSubmit={handleImageUpload}>
                         <div className="form-group">
@@ -185,6 +190,10 @@ const CreateEmplNarushenie = () => {
                                     </option>
                                 ))}
                             </select>
+                        </div>
+                        <br/>
+                        <div className="form-group">
+                            <input className="form-control" id="predlojenie" type="text"/>
                         </div>
                         <br/>
                         <div className="form-group">
