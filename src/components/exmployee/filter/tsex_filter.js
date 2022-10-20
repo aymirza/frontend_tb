@@ -46,7 +46,7 @@ function TsexFilter() {
     });
 
     useEffect(() => {
-        fetch(('http://localhost:4041/api/tsex'))
+        fetch(('http://10.45.180.16:4041/api/tsex'))
             .then(response => response.json())
             .then(result => setUserList(result))
             .catch(error => console.log(error));

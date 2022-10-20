@@ -24,18 +24,19 @@ const ListEmplNarushenie = () => {
     return (
 
         <div className="card">
-            <Table    responsive style={{wordBreak: 'break-all'}} >
+            <Table    responsive style={{wordBreak: 'break-word'}}  >
                 <thead  >
 
                 <tr>
-                    <th>Фамилия</th>
-                    <th>Имя</th>
-                    <th >Участка</th>
-                    <th>Цех нарушение</th>
-                    <th>Правила</th>
-                    <th>Нарушения</th>
-                    <th>Предложение</th>
-                    <th>Фото</th>
+                    <th style={{fontSize:'15px',textAlign:'center',border: '1px solid black'}}>Фамилия</th>
+                    <th style={{fontSize:'15px',textAlign:'center',border: '1px solid black'}}>Имя</th>
+                    <th style={{fontSize:'15px',textAlign:'center',border: '1px solid black'}}>Участка</th>
+                    <th style={{fontSize:'15px',textAlign:'center',border: '1px solid black'}}>Цех нарушение</th>
+                    <th style={{fontSize:'15px',textAlign:'center',border: '1px solid black'}}>Правила</th>
+                    <th style={{fontSize:'15px',textAlign:'center',border: '1px solid black'}}>Нарушения</th>
+                    <th style={{fontSize:'15px',textAlign:'center',border: '1px solid black'}}>Дата нарушения</th>
+                    <th style={{fontSize:'15px',textAlign:'center',border: '1px solid black'}}>Предложение</th>
+                    <th style={{fontSize:'15px',textAlign:'center',border: '1px solid black'}}>Фото</th>
                     {/*<th>imgfullname</th>*/}
                     {/*<th>imgtype</th>*/}
 

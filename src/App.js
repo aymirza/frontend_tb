@@ -23,7 +23,7 @@ const App = () => {
                             <Navbar.Brand>
                                 <Link to={"/list-empl-narushenie"}
                                       className="nav-link">
-                                    Texnika havfsizligi
+                                    Техника безопастность
                                 </Link>
                             </Navbar.Brand>
                             <Nav className="justify-content-end">
@@ -31,51 +31,51 @@ const App = () => {
                                 <Nav>
                                     <Link to={"/create-narushenie"}
                                           className="nav-link">
-                                        Create
+                                        Создание
                                     </Link>
                                 </Nav>
                                 <Nav>
                                     <Link to={"/narushenie-filter"}
                                           className="nav-link">
-                                        NarushenieList
+                                        Нарушения
                                     </Link>
                                 </Nav>
 
                                 <Nav>
                                     <Link to={"/pravila-filter"}
                                           className="nav-link">
-                                        PravilaList
+                                        Правила
                                     </Link>
                                 </Nav>
 
                                 <Nav>
                                     <Link to={"/tsex-filter"}
                                           className="nav-link">
-                                        TsexList
+                                        Участка нарушения
                                     </Link>
                                 </Nav>
                                 <Nav>
                                     <Link to={"/uchastka-filter"}
                                           className="nav-link">
-                                        UchastkaList
+                                        Участки
                                     </Link>
                                 </Nav>
                                 <Nav>
                                     <Link to={"/create-empl-narushenie"}
                                           className="nav-link">
-                                        CreateNarushenie
+                                        Создать нарушения 
                                     </Link>
                                 </Nav>
                                 <Nav>
                                     <Link to={"/list-empl-narushenie"}
                                           className="nav-link">
-                                        EmplNarushenieList
+                                        Нарушения лист
                                     </Link>
                                 </Nav>
                                 <Nav>
                                     <Link to={"/empl-narushenie-filter"}
                                           className="nav-link">
-                                        EmplNarushenieFilter
+                                        Нарушения фильтр
                                     </Link>
                                 </Nav>
 

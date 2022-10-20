@@ -23,7 +23,7 @@ function NarushenieFilter() {
     }
 
     const columns = [
-        {dataField: 'id', text: 'Id', sort: true},
+        {dataField: 'id', text: 'Id', sort: true,headerStyle: { width: '20px'}, headerAlign: 'center',  align: 'center'},
         {dataField: 'name', sort: true, filter: textFilter(), text: 'Name'}
     ]
 
@@ -47,7 +47,7 @@ function NarushenieFilter() {
     });
 
     useEffect(() => {
-        fetch(('http://localhost:4041/api/narushenie'))
+        fetch(('http://10.45.180.16:4041/api/narushenie'))
             .then(response => response.json())
             .then(result => setUserList(result))
             .catch(error => console.log(error));

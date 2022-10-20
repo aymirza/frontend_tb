@@ -15,7 +15,7 @@ const CreateNarushenie = () => {
         formData.append("name", name);
 
 
-        fetch("http://localhost:4041/api/narushenie", {
+        fetch("http://10.45.180.16:4041/api/narushenie", {
             method: "POST",
             body: formData
         })
@@ -40,7 +40,7 @@ const CreateNarushenie = () => {
 
         const formDataPravila = new FormData();
         formDataPravila.append("name", pravilaname);
-        fetch("http://localhost:4041/api/pravila", {
+        fetch("http://10.45.180.16:4041/api/pravila", {
             method: "POST",
             body: formDataPravila
         })
@@ -65,7 +65,7 @@ const CreateNarushenie = () => {
 
         const formDataTsex = new FormData();
         formDataTsex.append("name", tsexname);
-        fetch("http://localhost:4041/api/tsex", {
+        fetch("http://10.45.180.16:4041/api/tsex", {
             method: "POST",
             body: formDataTsex
         })
@@ -90,7 +90,7 @@ const CreateNarushenie = () => {
 
         const formDataUchastka = new FormData();
         formDataUchastka.append("name", uchastkaname);
-        fetch("http://localhost:4041/api/uchastka", {
+        fetch("http://10.45.180.16:4041/api/uchastka", {
             method: "POST",
             body: formDataUchastka
         })
@@ -107,7 +107,7 @@ const CreateNarushenie = () => {
     return (
         <div className="card">
             <div className="card-header">
-                <h1>CreateNarushenie</h1>
+                <h1>Добавить виды нарушении</h1>
                 <div className="card-body">
                     <form onSubmit={handleImageUpload}>
                         <div className="form-group">
@@ -132,7 +132,7 @@ const CreateNarushenie = () => {
             <br/>
             <br/>
             <div className="card-header">
-                <h1>CreatePravila</h1>
+                <h1>Добавить виды правила</h1>
                 <div className="card-body">
                     <form onSubmit={postPravila}>
                         <div className="form-group">
@@ -157,7 +157,7 @@ const CreateNarushenie = () => {
             <br/>
             <br/>
             <div className="card-header">
-                <h1>CreateTsex</h1>
+                <h1>Добавить виды участков нарушений</h1>
                 <div className="card-body">
                     <form onSubmit={postTsex}>
                         <div className="form-group">
@@ -182,7 +182,7 @@ const CreateNarushenie = () => {
             <br/>
             <br/>
             <div className="card-header">
-                <h1>CreateUchastka</h1>
+                <h1>Добавить участкий</h1>
                 <div className="card-body">
                     <form onSubmit={postUchastka}>
                         <div className="form-group">

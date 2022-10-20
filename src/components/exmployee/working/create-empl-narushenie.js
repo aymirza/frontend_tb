@@ -16,6 +16,7 @@ const CreateEmplNarushenie = () => {
         const tsex_uchastka = event.target["tsex_uchastka"].value;
         const pravila = event.target["pravila"].value;
         const narushenie = event.target["narushenie"].value;
+        const date_narushenie = event.target["date_narushenie"].value;
         const predlojenie = event.target["predlojenie"].value;
 
         const formData = new FormData();
@@ -25,10 +26,11 @@ const CreateEmplNarushenie = () => {
         formData.append("tsex_uchastka", tsex_uchastka);
         formData.append("pravila", pravila);
         formData.append("narushenie", narushenie);
+        formData.append("date_narushenie", date_narushenie);
         formData.append("predlojenie", predlojenie);
         formData.append("file", file);
 
-        fetch("http://localhost:4041/api/upload", {
+        fetch("http://10.45.180.16:4041/api/upload", {
             method: "POST",
             body: formData
         })
@@ -47,7 +49,7 @@ const CreateEmplNarushenie = () => {
     const [uchastkaOptionList, setUchastkaOptionList] = useState([]);
     const fetchDataUchastka = (value1) => {
         axios
-            .get('http://localhost:4041/api/uchastka')
+            .get('http://10.45.180.16:4041/api/uchastka')
             .then((response) => {
                 const {data} = response;
                 if (response.status === 200) {
@@ -66,7 +68,7 @@ const CreateEmplNarushenie = () => {
     const [tsexOptionList, setTsexOptionList] = useState([]);
     const fetchDataTsexUchastka = (value2) => {
         axios
-            .get('http://localhost:4041/api/tsex')
+            .get('http://10.45.180.16:4041/api/tsex')
             .then((response) => {
                 const {data} = response;
                 if (response.status === 200) {
@@ -85,7 +87,7 @@ const CreateEmplNarushenie = () => {
     const [pravilaOptionList, setPravilaOptionList] = useState([]);
     const fetchDataPravila = (value3) => {
         axios
-            .get('http://localhost:4041/api/pravila')
+            .get('http://10.45.180.16:4041/api/pravila')
             .then((response) => {
                 const {data} = response;
                 if (response.status === 200) {
@@ -104,7 +106,7 @@ const CreateEmplNarushenie = () => {
     const [narushenieOptionList, setNarushenieOptionList] = useState([]);
     const fetchDataNarushenie = (value4) => {
         axios
-            .get('http://localhost:4041/api/narushenie')
+            .get('http://10.45.180.16:4041/api/narushenie')
             .then((response) => {
                 const {data} = response;
                 if (response.status === 200) {
@@ -122,17 +124,20 @@ const CreateEmplNarushenie = () => {
     return (
         <div className="card">
             <div className="card-header">
-                <h1>Create Empl Narushenie</h1>
+                <h1>Создать нарушения</h1>
                 <div className="card-body">
                     <form onSubmit={handleImageUpload}>
                         <div className="form-group">
+						<h6>Фамилия</h6>
                             <input className="form-control" id="lastname" type="text"/>
                         </div>
                         <br/>
                         <div className="form-group">
+						<h6>Имя</h6>
                             <input className="form-control" id="firstname" type="text"/><br/>
                         </div>
                         <div className="form-group">
+						<h6>Участка нарушителя</h6>
                             <select
                                 className="form-control"
                                 id="uchastka"
@@ -148,6 +153,7 @@ const CreateEmplNarushenie = () => {
                         </div>
                         <br/>
                         <div className="form-group">
+						<h6>Участка нарушения</h6>
                             <select
                                 className="form-control"
                                 id="tsex_uchastka"
@@ -163,9 +169,10 @@ const CreateEmplNarushenie = () => {
                         </div>
                         <br/>
                         <div className="form-group">
+						<h6>Нарушения</h6>
                             <select
                                 className="form-control"
-                                id="pravila"
+                                id="narushenie"
                                 disabled={false}
                                 value={narushenieSelect}
                                 onChange={(c) => setNarushenieSelected(c.currentTarget.value)}>
@@ -178,9 +185,10 @@ const CreateEmplNarushenie = () => {
                         </div>
                         <br/>
                         <div className="form-group">
+						<h6>Правила</h6>
                             <select
                                 className="form-control"
-                                id="narushenie"
+                                id="pravila"
                                 disabled={false}
                                 value={pravilaSelect}
                                 onChange={(d) => setPravilaSelected(d.currentTarget.value)}>
@@ -191,12 +199,19 @@ const CreateEmplNarushenie = () => {
                                 ))}
                             </select>
                         </div>
+						<br/>
+                        <div className="form-group">
+						<h6>Дата нарушения</h6>
+                            <input className="form-control" id="date_narushenie" type="date"/>
+                        </div>
                         <br/>
                         <div className="form-group">
+						<h6>Комментарий</h6>
                             <input className="form-control" id="predlojenie" type="text"/>
                         </div>
                         <br/>
                         <div className="form-group">
+						<h6>Загрузка фото, видео, файл</h6>
                             <input className="form-control" id="fileInput" type="file"/>
                         </div>
                         <br/>

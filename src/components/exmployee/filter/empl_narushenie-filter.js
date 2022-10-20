@@ -24,13 +24,15 @@ function EmplNarFilter() {
     }
 
     const columns = [
-        {dataField: 'lastname', sort: true, filter: textFilter(), text: 'lastname',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px'},style:{wordBreak: 'break-all'} },
-        {dataField: 'firstname', sort: true, filter: textFilter(), text: 'firstname',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px'},style:{wordBreak: 'break-all'} },
-        {dataField: 'uchastka', sort: true, filter: textFilter(), text: 'uchastka',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px'},style:{wordBreak: 'break-all'} },
-        {dataField: 'pravila', sort: true, filter: textFilter(), text: 'pravila',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px'},style:{wordBreak: 'break-all'} },
-        {dataField: 'narushenie', sort: true, filter: textFilter(), text: 'narushenie',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px'},style:{wordBreak: 'break-all'} },
-        {dataField: 'predlojenie', sort: true, filter: textFilter(), text: 'predlojenie',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px' },style:{wordBreak: 'break-all'} },
-        {dataField: 'imgurl', sort: true, filter: textFilter(), text: 'imgurl',  align: 'center', headerAlign: 'center',headerStyle: { width: '150px'},style:{wordBreak: 'break-all'} },
+        {dataField: 'lastname', sort: true, filter: textFilter(), text: 'Фамилия',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px', fontSize:'15px'},style:{wordBreak: 'break-word', fontSize:'15px'} },
+        {dataField: 'firstname', sort: true, filter: textFilter(), text: 'Имя',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px', fontSize:'15px'},style:{wordBreak: 'break-word', fontSize:'15px'} },
+        {dataField: 'uchastka', sort: true, filter: textFilter(), text: 'Участка',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px', fontSize:'15px'},style:{wordBreak: 'break-word', fontSize:'15px'} },
+        {dataField: 'tsex_uchastka', sort: true, filter: textFilter(), text: 'Нарушения уч',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px', fontSize:'15px'},style:{wordBreak: 'break-word', fontSize:'15px'} },
+        {dataField: 'pravila', sort: true, filter: textFilter(), text: 'Правила',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px', fontSize:'15px'},style:{wordBreak: 'break-word', fontSize:'15px'} },
+        {dataField: 'narushenie', sort: true, filter: textFilter(), text: 'Нарушения',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px', fontSize:'15px'},style:{wordBreak: 'break-word', fontSize:'15px'} },
+        {dataField: 'date_narushenie', sort: true, filter: textFilter(), text: 'Дата нарушения',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px', fontSize:'15px' },style:{wordBreak: 'break-word', fontSize:'15px'} },
+        {dataField: 'predlojenie', sort: true, filter: textFilter(), text: 'Комментарий',  align: 'center', headerAlign: 'center',headerStyle: { width: '130px' , fontSize:'15px'},style:{wordBreak: 'break-word', fontSize:'15px'} },
+        {dataField: 'imgurl', sort: true, filter: textFilter(), text: 'Доказательство',  align: 'center', headerAlign: 'center',headerStyle: { width: '150px', fontSize:'15px'},style:{wordBreak: 'break-word', fontSize:'15px'} },
     ]
 
     const pagination = paginationFactory({
