@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import axios from "axios";
 
 function CreateNarushenie() {
-    const baseURL = 'http://10.45.180.16:4041/api/emplnaruhsenie';
+    const baseURL = 'http://localhost:4040/api/emplnaruhsenie';
     const postlastname = useRef(null);
     const postfirstname = useRef(null);
     const postuchastka = useRef(null);
@@ -65,7 +65,7 @@ function CreateNarushenie() {
     const [uchastkaOptionList, setUchastkaOptionList] = useState([]);
     const fetchDataUchastka = (value1) => {
         axios
-            .get('http://10.45.180.16:4040/api/empl/uchastka')
+            .get('http://localhost:4040/api/empl/uchastka')
             .then((response) => {
                 const {data} = response;
                 if (response.status === 200) {
